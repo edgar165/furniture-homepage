@@ -1,119 +1,201 @@
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html, body {
+  overflow-x: hidden; 
+  font-size: 16px;
+  font-family: 'League Spartan', sans-serif;
+}
+
+
 :root {
-  /* Primary colors */
   --White: hsl(0, 100%, 100%);
   --Grey-500: hsl(0, 0%, 63%);
   --Grey-800: hsl(0, 0%, 27%);
   --Black: hsl(0, 0%, 0%);
-  /*  Body Copy */
-
-  --Font-size: 16px;
-
-  /*Font */
-
-  --Family: [League Spartan](https://fonts.google.com/specimen/League+Spartan);
-  --Weights: 500, 600, 700;
 }
-body{
-   background-color: black;
-}
-
-.hero{
-   display: flex;
-   flex-direction: row;
-   margin: 30px 20px 0 40px;
-}
-.heroleft{
-   position: relative;
-   flex: 1;
-   background-image: url(/resources/images/desktop-image-hero-1.jpg);
-   background-size: cover;
-   background-position: center;
-}
-.arrows{
-   display: flex;
-   position: absolute;
-   bottom: 0;
-   right: -148px;
-   background-color: black;
-   padding:15px 45px;
-   gap: 30px;
-
-}
-
-nav{
-   display: flex;
-   flex-direction: column;
-   gap: 30px;
-
+img {
+  max-width: 100%;
+  height: auto;
+  display: block; 
 }
 
 
-.hero1{
-   display: flex;
-   flex-direction: row;
-   margin: 20px 0 0 30px;
-   padding: 40px;
-   gap: 40px;
-   
+.hero {
+  display: flex;
+  flex-direction: row;
 }
+
+.heroleft {
+  position: relative;
+  flex: 1;
+  background-image: url(/resources/images/desktop-image-hero-1.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.arrows {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  right: -148px;
+  background-color: black;
+  padding: 15px 45px;
+  gap: 30px;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.hero1 {
+  display: flex;
+  flex-direction: row;
+  margin: 20px 0 0 30px;
+  padding: 40px;
+  gap: 40px;
+}
+
 .list {
-   display: flex;
-   flex-direction: row;
-   gap: 30px;
-   color: var(--White);
-   list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  color: var(--White);
+  list-style: none;
 }
 .list li {
-   cursor: pointer;
+  cursor: pointer;
 }
 
 
 .section2 {
-   background-color: white;
-   display: flex;
-   flex-direction: column;
-   padding: 50px;
-   gap: 70px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  gap: 70px;
+}
 
+.section2 h1 {
+  font-size: 40px;
+  color: var(--Black);
 }
-.section2 h1{
-   font-size: 40px;
-   color: var(--Black);
-}
+
 .section2 p {
-   color: var(--Grey-500);
-}
-.section2-text{
-   display: flex;
-   flex-direction: column;
-   gap: 30px;
-   margin: 40px 0 0 40px;
-   padding: 20px;
-}
-.shop{
-   display: flex;
-   flex-direction: row;
-   gap: 20px;
+  color: var(--Grey-500);
 }
 
-.lastpart{
-   display: flex;
-   flex-direction: row;
-   margin: 0 20px 0 40px;
+.section2-text {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin: 40px 0 0 40px;
+  padding: 20px;
 }
-.furniture{
-   display: flex;
-   flex-direction: column;
-   background-color: var(--White);
-   padding: 20px;
-   gap: 30px;
+
+.shop {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.shop h3{
+word-spacing: 9px;
+}
+
+
+.lastpart {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; 
+  gap: 20px;
+  align-items: center;
+}
+
+.lastpart-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.furniture {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--White);
+  padding: 20px;
+  gap: 20px;
 }
 .furniture p {
-   color: var(--Grey-500);
+  color: var(--Grey-500);
+  width: 100%;
+}
+
+
+@media (max-width: 480px) {
+  .hero {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
+
+  .heroleft {
+    padding: 10px;
+    background-image: url(/resources/images/mobile-image-hero-1.jpg);
+    background-size: cover;
+    background-position: center;
+    flex: 1;
+    min-height: 250px;
+    width: 100%;
+  }
+
+  .arrows {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 5px;
+  }
+
+  .hero1 {
+    margin: -40px 0 0 10px;
+  }
+
+  .hero1 img {
+    margin-left: 30px;
+    width: 30%;
+  }
+
+  .list {
+    display: none;
+  }
+  .section2-text h1{
+    font-size: 35px;
+  }
+
+  .section2-text p {
+    font-size: 18px;
+    width: 100%;
+  }
+
+  .lastpart {
+    grid-template-columns: 1fr; 
+    gap: 0; 
+    
+  }
+  .lastpart img {
+    width: 100%;
+  }
+  .furniture p {
+    width: 100%;
+    padding: 1rem;
+    font-size: 13px;
+  }
+
+  .lastpart h1 {
+    font-size: 16px;
+  }
 }
